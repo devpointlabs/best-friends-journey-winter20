@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_035100) do
+ActiveRecord::Schema.define(version: 2021_01_16_002404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "pet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_notes_on_pet_id"
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "nombre"
@@ -60,5 +69,6 @@ ActiveRecord::Schema.define(version: 2021_01_14_035100) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "notes", "pets"
   add_foreign_key "pets", "users"
 end
