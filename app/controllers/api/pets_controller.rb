@@ -18,6 +18,7 @@ class Api::PetsController < ApplicationController
     @pet.weight = params [:weight]
     @pet.sex = params [:sex]
     @pet.service = params [:service]
+    @pet.vet = params [:vet]
     file = params [:file]
     if file && file != ""
       begin
@@ -56,6 +57,7 @@ class Api::PetsController < ApplicationController
     @pet.weight = params [:weight]
     @pet.sex = params [:sex]
     @pet.service = params [:service]
+    @pet.vet = params [:vet]
     file = params [:file]
     if file && file != ""
       begin

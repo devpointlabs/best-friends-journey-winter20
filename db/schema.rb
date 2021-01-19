@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_002404) do
+ActiveRecord::Schema.define(version: 2021_01_19_034037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "documents", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "picture"
+    t.bigint "pet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_documents_on_pet_id"
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "phone"
+    t.string "policy"
+    t.bigint "pet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_insurances_on_pet_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
@@ -36,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_002404) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "pic"
+    t.string "vet"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -69,6 +90,8 @@ ActiveRecord::Schema.define(version: 2021_01_16_002404) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "documents", "pets"
+  add_foreign_key "insurances", "pets"
   add_foreign_key "notes", "pets"
   add_foreign_key "pets", "users"
 end
