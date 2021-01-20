@@ -8,10 +8,12 @@ import AuthProvider from "./providers/AuthProvider";
 import 'semantic-ui-css/semantic.min.css';
 import { initMiddleware } from 'devise-axios';
 import PetProvider from './providers/PetProvider';
+import InsuranceProvider from './providers/InsuranceProvider';
 initMiddleware();
 
 ReactDOM.render(
   <React.StrictMode>
+    <InsuranceProvider>
     <PetProvider>
     <AuthProvider>
       <BrowserRouter>
@@ -19,6 +21,7 @@ ReactDOM.render(
       </BrowserRouter>
     </AuthProvider>
     </PetProvider>
+    </InsuranceProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

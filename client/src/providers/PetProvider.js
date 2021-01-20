@@ -46,7 +46,7 @@ class PetProvider extends Component {
       .then( res => {
         const { pets } = this.state
         this.setState({ pets: pets.filter( p => p.id !== id)})
-        window.location.href = '/user'
+        window.location.href = '/user' // end up changing from user to ...
       })
       .catch( err => {
         console.log(err);
