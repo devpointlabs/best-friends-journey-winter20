@@ -13,15 +13,15 @@ initMiddleware();
 
 ReactDOM.render(
   <React.StrictMode>
-    <InsuranceProvider>
-    <PetProvider>
     <AuthProvider>
+    <PetProvider>
+    <InsuranceProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </AuthProvider>
-    </PetProvider>
     </InsuranceProvider>
+    </PetProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
