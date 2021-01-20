@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-const petContext = React.createContext();
-export const petConsumer = petContext.Consumer;
+// import { Redirect } from 'react-router-dom';
+const PetContext = React.createContext();
+export const PetConsumer = PetContext.Consumer;
 
 
-class petProvider extends Component {
+class PetProvider extends Component {
   state = { pets: [] }
   componentDidMount() {
     axios.get('/api/pets')
@@ -54,15 +54,15 @@ class petProvider extends Component {
   }
   render() {
     return(
-      <petContext.Provider value={{
+      <PetContext.Provider value={{
         ...this.state,
-        addpet: this.addpet,
-        updatepet: this.updatepet,
-        deletepet: this.deletepet,
+        addPet: this.addPet,
+        updatePet: this.updatePet,
+        deletePet: this.deletePet,
       }}>
         { this.props.children }
-      </petContext.Provider>
+      </PetContext.Provider>
     )
   }
 }
-export default petProvider;
+export default PetProvider;
