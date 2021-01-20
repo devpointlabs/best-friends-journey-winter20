@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import AuthProvider from "./providers/AuthProvider";
+import AuthProvider from './providers/AuthProvider';
 import 'semantic-ui-css/semantic.min.css';
 import { initMiddleware } from 'devise-axios';
 import PetProvider from './providers/PetProvider';
 import InsuranceProvider from './providers/InsuranceProvider';
+import NoteProvider from './providers/NoteProvider';
 import DocumentProvider from './providers/DocumentProvider';
 
 initMiddleware();
@@ -19,9 +20,11 @@ ReactDOM.render(
       <PetProvider>
         <InsuranceProvider>
           <DocumentProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
+            <NoteProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </NoteProvider>
           </DocumentProvider>
         </InsuranceProvider>
       </PetProvider>
