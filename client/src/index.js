@@ -9,26 +9,28 @@ import 'semantic-ui-css/semantic.min.css';
 import { initMiddleware } from 'devise-axios';
 import PetProvider from './providers/PetProvider';
 import InsuranceProvider from './providers/InsuranceProvider';
-
 import NoteProvider from './providers/NoteProvider';
+import DocumentProvider from './providers/DocumentProvider';
 
 initMiddleware();
 
 ReactDOM.render(
-	<React.StrictMode>
-		<AuthProvider>
-			<PetProvider>
-				<InsuranceProvider>
-					<NoteProvider>
-						<BrowserRouter>
-							<App />
-						</BrowserRouter>
-					</NoteProvider>
-				</InsuranceProvider>
-			</PetProvider>
-		</AuthProvider>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <AuthProvider>
+      <PetProvider>
+        <InsuranceProvider>
+          <DocumentProvider>
+            <NoteProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </NoteProvider>
+          </DocumentProvider>
+        </InsuranceProvider>
+      </PetProvider>
+    </AuthProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
