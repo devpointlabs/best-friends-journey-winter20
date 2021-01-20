@@ -4,26 +4,31 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import AuthProvider from "./providers/AuthProvider";
+import AuthProvider from './providers/AuthProvider';
 import 'semantic-ui-css/semantic.min.css';
 import { initMiddleware } from 'devise-axios';
 import PetProvider from './providers/PetProvider';
 import InsuranceProvider from './providers/InsuranceProvider';
+
+import NoteProvider from './providers/NoteProvider';
+
 initMiddleware();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AuthProvider>
-    <PetProvider>
-    <InsuranceProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </InsuranceProvider>
-    </PetProvider>
-    </AuthProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<AuthProvider>
+			<PetProvider>
+				<InsuranceProvider>
+					<NoteProvider>
+						<BrowserRouter>
+							<App />
+						</BrowserRouter>
+					</NoteProvider>
+				</InsuranceProvider>
+			</PetProvider>
+		</AuthProvider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
