@@ -3,12 +3,9 @@ Rails.application.routes.draw do
   
   namespace :api do
     resources :pets do
-      resources :notes do
-        resources :documents do 
-          resources :insurances do 
-          end 
-        end 
-      end
-    end
-  end
+      resources :notes 
+        resources :documents 
+          resources :insurances 
+    end 
+  end 
 end
