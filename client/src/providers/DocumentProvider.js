@@ -48,7 +48,7 @@ class DocumentProvider extends Component {
           if (d.id === id) {
             return res.data
           }
-          return i
+          return d
         })
         this.setState({ documents })
       })

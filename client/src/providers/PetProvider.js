@@ -7,7 +7,7 @@ export const PetConsumer = PetContext.Consumer;
 
 class PetProvider extends Component {
   state = { pets: [] }
-  componentDidMount() {
+  getAllPets = () => {
     axios.get('/api/pets')
       .then( res => {
         this.setState({ pets: res.data })
@@ -59,6 +59,7 @@ class PetProvider extends Component {
         addPet: this.addPet,
         updatePet: this.updatePet,
         deletePet: this.deletePet,
+        getAllPets: this.getAllPets,
       }}>
         { this.props.children }
       </PetContext.Provider>
