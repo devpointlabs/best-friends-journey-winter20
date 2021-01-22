@@ -90,7 +90,7 @@ class Api::PetsController < ApplicationController
 
   def destroy
     @pet.destroy
-    render json: { message: 'Pet Released'}
+    render json: { message: 'Pet Deleted'}
   end
 
 private

@@ -3,8 +3,8 @@ import PetList from './PetList';
 import { PetConsumer } from '../../providers/PetProvider';
 import { useEffect } from 'react';
 
-const Pets = ({ getAllPets, pets }) => {
-    useEffect( () => {
+const Pets = ({ getAllPets, pets, deletePet }) => {
+    useEffect( () => {                  
         getAllPets()
     }, [])
     
@@ -12,10 +12,14 @@ const Pets = ({ getAllPets, pets }) => {
         <>
             <h1> Pets </h1>
             {/* <PetsForm addPet={value.addPet} /> */}
-            <PetList pets={pets} />
+            <PetList 
+                pets={pets} 
+                deletePet={deletePet}
+            />
         </>
     )
 }
+
 
 const ConnectedPets = (props) => (
     <PetConsumer>
