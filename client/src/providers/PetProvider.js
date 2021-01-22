@@ -46,7 +46,7 @@ class PetProvider extends Component {
       .then( res => {
         const { pets } = this.state
         this.setState({ pets: pets.filter( p => p.id !== id)})
-        window.location.href = '/user' // end up changing from user to ...
+        window.location.href = '/pets' 
       })
       .catch( err => {
         console.log(err);
@@ -59,7 +59,7 @@ class PetProvider extends Component {
         addPet: this.addPet,
         updatePet: this.updatePet,
         deletePet: this.deletePet,
-        getAllPets: this.getAllPets,
+        getAllPets: this.getAllPets
       }}>
         { this.props.children }
       </PetContext.Provider>
