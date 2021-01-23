@@ -1,15 +1,19 @@
 import { Component } from 'react';
 // import PetForm from './PetForm';
 import { Button } from 'semantic-ui-react';
+import PetForm from './PetForm'
 
 class Pet extends Component {
-  state = { open: false }
+  state = { 
+    open: false, 
+    editing: false
+  }
 
   setOpen = (val) => this.setState({ open: val })
 
   render() {
     const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, } = this.props
-    const { open } = this.state
+    const { open, editing } = this.state
     return (
         <> 
             <p>{nombre}</p>
@@ -24,7 +28,10 @@ class Pet extends Component {
             <br />
             <br></br>
             <Button icon='trash' color='red' onClick={() => deletePet(petId)} />
-    {/* //   <PetForm /> */}
+            <Button onClick={() => this.setState({ editing: !editing})} >Edit Pet </Button>
+            {this.state.editing && 
+              <PetForm />
+            }
         </>
     )
   }
