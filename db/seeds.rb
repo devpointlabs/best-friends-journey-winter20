@@ -1,5 +1,5 @@
 5.times do
-    Pet.create(
+    pet = Pet.create(
         nombre: Faker::Name.name,
         age: Faker::Number.between(from: 1, to: 10),
         animal: Faker::Creature::Animal.name,
@@ -11,4 +11,12 @@
         vet: Faker::FunnyName.name,
         user_id: 3
     ) 
+    3.times do 
+        Insurance.create(
+            nombre: Faker::Name.name,
+            phone: Faker::PhoneNumber.cell_phone,
+            policy: Faker::Number.leading_zero_number(digits: 10),
+            pet_id: pet.id
+        )
+    end 
 end 

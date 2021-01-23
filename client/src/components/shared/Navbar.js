@@ -19,30 +19,6 @@ class Navbar extends Component {
             />
           </Link>
 
-          <Link to='/insurance'>
-            <Menu.Item
-              id='insurance'
-              name='insurance'
-              active={location.pathname === '/insurances'}
-            />
-          </Link>
-
-          <Link to='/documents'>
-            <Menu.Item
-              id='documents'
-              name='documents'
-              active={location.pathname === '/documents'}
-            />
-          </Link>
-
-          <Link to='/notes'>
-            <Menu.Item
-              id='notes'
-              name='notes'
-              active={location.pathname === '/notes'}
-            />
-          </Link>
-
           <Menu.Item
             name='logout'
             onClick={ () => handleLogout(this.props.history) }
