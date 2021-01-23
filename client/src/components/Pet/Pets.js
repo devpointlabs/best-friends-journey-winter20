@@ -1,9 +1,12 @@
 // import PetForm from './PetForm';
 import PetList from './PetList';
+import PetForm from './PetForm';
 import { PetConsumer } from '../../providers/PetProvider';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Pets = ({ getAllPets, pets, deletePet }) => {
+  const [ adding, setAdding ] = useState(false);
+
     useEffect( () => {                  
         getAllPets()
     }, [])
@@ -12,10 +15,13 @@ const Pets = ({ getAllPets, pets, deletePet }) => {
         <>
             <h1> Pets </h1>
             {/* <PetsForm addPet={value.addPet} /> */}
+            <button onClick={() => setAdding(!adding)}>Add New Pet</button>
+            { adding && <PetForm /> }
             <PetList 
                 pets={pets} 
                 deletePet={deletePet}
             />
+
         </>
     )
 }

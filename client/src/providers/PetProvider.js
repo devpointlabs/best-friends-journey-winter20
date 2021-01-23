@@ -16,7 +16,7 @@ class PetProvider extends Component {
         console.log(err);
       })
   }
-  addPet = (pet) => {
+  addPet = (userId, pet, history) => {
     axios.post('/api/pets', { pet })
     .then(res => {
         const { pets } = this.state; 
