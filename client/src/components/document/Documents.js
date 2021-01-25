@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { DocumentConsumer } from '../../providers/DocumentProvider';
-import DocumentForm from './DocumentForm'
+import DocumentForm from './DocumentForm';
+import DocumentList from './DocumentList';
 
 class Documents extends Component {
   componentDidMount() {
@@ -9,12 +10,18 @@ class Documents extends Component {
   }
 
   render() {
-    const { petId, addDocument} = this.props
+    const { petId, addDocument, documents, deleteDocument, updateDocument } = this.props
     return(
       <>
         <DocumentForm 
           petId={petId}
           addDocument={addDocument}
+        />
+        <DocumentList 
+          petId={petId}
+          documents={documents}
+          deleteDocument={deleteDocument}
+          updateDocument={updateDocument}
         />
       </>
     )

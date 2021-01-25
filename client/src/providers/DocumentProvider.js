@@ -6,7 +6,6 @@ const DocumentContext = React.createContext();
 export const DocumentConsumer = DocumentContext.Consumer;
 
 class DocumentProvider extends Component {
-
   state = { documents: [] }
 
   getAllPetDocument = (petId) => {
