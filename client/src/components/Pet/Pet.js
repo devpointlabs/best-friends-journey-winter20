@@ -1,7 +1,7 @@
 import { Component } from 'react';
-// import PetForm from './PetForm';
 import { Button } from 'semantic-ui-react';
 import PetForm from './PetForm'
+import Document from '../document/Documents';
 
 class Pet extends Component {
   state = { 
@@ -12,7 +12,7 @@ class Pet extends Component {
   setOpen = (val) => this.setState({ open: val })
 
   render() {
-    const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, } = this.props
+    const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, updatePet } = this.props
     const { open, editing } = this.state
     return (
         <> 
@@ -32,6 +32,7 @@ class Pet extends Component {
             {this.state.editing && 
               <PetForm />
             }
+            <Document petId={petId} />
         </>
     )
   }

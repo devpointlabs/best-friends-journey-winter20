@@ -21,7 +21,6 @@ const Pets = ({ getAllPets, pets, deletePet }) => {
                 pets={pets} 
                 deletePet={deletePet}
             />
-
         </>
     )
 }
