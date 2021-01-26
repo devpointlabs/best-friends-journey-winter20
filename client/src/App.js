@@ -6,7 +6,7 @@ import Register from './components/auth/Register';
 import { Switch, Route } from 'react-router-dom';
 import { Container } from "semantic-ui-react";
 import FetchUser from './components/auth/FetchUser';
-import Pets from './components/Pet/Pets';
+import Pets from './components/pet/Pets';
 import Insurances from './components/insurance/Insurances';
 
 const App = () => (

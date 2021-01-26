@@ -1,8 +1,9 @@
 class Api::DocumentsController < ApplicationController
+    before_action :set_pet
     before_action :set_document, except: [:index, :create]
   
     def index
-      render json: @pet.document
+      render json: @pet.documents
     end
   
     def show
@@ -11,9 +12,8 @@ class Api::DocumentsController < ApplicationController
   
     def create
       @document = @pet.documents.new()
-      @document.title = params [:title]
-      @document.description = params [:description]
-      @document.pic = params [:pic]
+      @document.title = params[:title]
+      @document.description = params[:description]
       file = params [:file]
       if file && file != ""
         begin
@@ -23,7 +23,7 @@ class Api::DocumentsController < ApplicationController
             public_id: file.original_filename, 
             secure: true
           )
-          @document.pic = cloud_image['secure_url']
+          @document.picture = cloud_image['secure_url']
           if @document.save
             render json: @document
           else
@@ -33,7 +33,7 @@ class Api::DocumentsController < ApplicationController
           render json: { errors: e }, status: 422
         end
       else
-        @document.avatar = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+        @document.picture = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
         if @document.save
           render json: @document
         else
@@ -45,9 +45,8 @@ class Api::DocumentsController < ApplicationController
   
     def update
         @document = @pet.documents.new()
-        @document.title = params [:title]
-        @document.description = params [:description]
-        @document.pic = params [:pic]
+        @document.title = params[:title]
+        @document.description = params[:description]
       file = params [:file]
       if file && file != ""
         begin
@@ -57,7 +56,7 @@ class Api::DocumentsController < ApplicationController
             public_id: file.original_filename, 
             secure: true
           )
-          @document.pic = cloud_image['secure_url']
+          @document.picture = cloud_image['secure_url']
           if @document.save
             render json: @document
           else
@@ -67,7 +66,7 @@ class Api::DocumentsController < ApplicationController
           render json: { errors: e }, status: 422
         end
       else
-        @document.avatar = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+        @document.picture = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
         if @document.save
           render json: @document
         else
@@ -86,5 +85,9 @@ class Api::DocumentsController < ApplicationController
   private
     def set_document
       @document = @pet.documents.find(params[:id])
+    end
+
+    def set_pet
+      @pet = Pet.find(params[:pet_id])
     end
 end

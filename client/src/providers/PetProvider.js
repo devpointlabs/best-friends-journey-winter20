@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import { Redirect } from 'react-router-dom';
 const PetContext = React.createContext();
+
 export const PetConsumer = PetContext.Consumer;
 
 
@@ -16,6 +17,7 @@ class PetProvider extends Component {
         console.log(err);
       })
   }
+  
   addPet = (userId, pet, history) => {
     axios.post('/api/pets', { pet })
     .then(res => {
@@ -26,6 +28,7 @@ class PetProvider extends Component {
         console.log(err);
       })
   }
+
   updatePet = (id, pet) => {
     axios.put(`/api/pets/${id}`, { pet })
       .then( res => {
@@ -41,6 +44,7 @@ class PetProvider extends Component {
         console.log(err);
       })
   }
+
   deletePet = (id) => {
     axios.delete(`/api/pets/${id}`)
       .then( res => {
@@ -52,6 +56,7 @@ class PetProvider extends Component {
         console.log(err);
       })
   }
+
   render() {
     return(
       <PetContext.Provider value={{
@@ -66,4 +71,5 @@ class PetProvider extends Component {
     )
   }
 }
+
 export default PetProvider;
