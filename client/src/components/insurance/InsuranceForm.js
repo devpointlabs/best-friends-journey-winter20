@@ -75,19 +75,4 @@ const ConnectedInsuranceForm = (props) => (
   </InsuranceConsumer>
 )
 
-
 export default ConnectedInsuranceForm;
-
-
-// handleSubmit = (e) => {
-//   e.preventDefault()
-//   if (this.props.id) {
-//     const { petId, updateInsurance, id, setOpen } = this.props
-//     updateInsurance(petId, id, this.state)
-//     setOpen(false)
-//   } else {
-//     const { addInsurance, petId } = this.props
-//     addInsurance(petId, this.state)
-//   }
-//   this.setState({ nombre: '', policy: '', phone: '' })
-// }
