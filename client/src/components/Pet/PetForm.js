@@ -23,9 +23,9 @@ class PetForm extends Component {
     const { weight} = this.state
     this.setState({ weight: parseFloat(weight) })
     if (this.props.id) {
-      const { userId, updatePet, id, setOpen } = this.props
+      const { userId, updatePet, id, setEditOpen } = this.props
       updatePet(userId, id, this.state)
-      setOpen(false)
+      setEditOpen(false)
     } else {
       //const { addPet, userId } = this.props
       // hard coded userid
