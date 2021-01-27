@@ -11,7 +11,8 @@ class Insurance extends Component {
     const { insuranceId, nombre, phone, policy, deleteInsurance, } = this.props
     const { open } = this.state
     return (
-        <> 
+        <>
+        test insurances 
             <p>{nombre}</p>
             <p>{phone}</p>
             <p>{policy}</p>
