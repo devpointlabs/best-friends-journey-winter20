@@ -9,7 +9,8 @@ const PetList = ({ pets, deletePet }) => (
         { pets.map( p => 
           <Pet
             petId={p.id}
-            {...p}
+            {...p} 
+
             deletePet={deletePet}
           />
         )}

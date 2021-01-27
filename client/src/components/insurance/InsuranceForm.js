@@ -45,11 +45,11 @@ class ItemForm extends Component {
           label='Insurance Name'
         />
         <Form.Input
-          name='plan'
-          value={plan}
+          name='policy'
+          value={policy}
           onChange={this.handleChange}
           required
-          label='Plan'
+          label='Policy'
           type="number" 
           step="0.01"
         />

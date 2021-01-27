@@ -1,4 +1,4 @@
-import Pets from '../Pet/Pets'
+import Pets from '../pet/Pets'
 
 const Home = () => (
   <>

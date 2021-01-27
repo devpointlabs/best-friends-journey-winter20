@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Button, List, Modal, Image, Grid } from 'semantic-ui-react';
 import PetForm from './PetForm'
 import Documents from '../document/Documents';
+import Insurances from '../insurance/Insurances';
 
 class Pet extends Component {
   state = { 
@@ -36,8 +37,8 @@ class Pet extends Component {
                   <p>{service}</p>
                   <p>{vet}</p>
                   <Grid columns={2} divided>
-                    {/* <p>insurance</p> */}
-                    {/* <Documents petId={petId}/> */}
+                    {/* <Insurances petId={petId}/>  */}
+                    <Documents petId={petId}/> 
                     {/* <p>notes</p> */}
                   </Grid>
                 </Modal.Description>
@@ -57,6 +58,10 @@ class Pet extends Component {
                 </Modal>
               </Modal.Actions>
             </Modal>
+           <Insurances
+            nombre={nombre}
+           />
+
           </List.Header>
         </>
     )
