@@ -1,9 +1,10 @@
 import { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 import { PetConsumer } from '../../providers/PetProvider';
+import Dropzone from 'react-dropzone'; 
 
 class PetForm extends Component {
-  state = { nombre: '', age: 0 , animal: '', color: '', weight: 0.0, sex: '', service: '', pic: '', vet: '' }
+  state = { nombre: '', age: 0 , animal: '', color: '', weight: 0.0, sex: '', service: '', file: '', vet: '' }
 
   componentDidMount() {
     if (this.props.id) {
@@ -34,11 +35,15 @@ class PetForm extends Component {
   
       addPet(userId, this.state, history)
     }
-    this.setState({ nombre: '', age: 0 , animal: '', color: '', weight: 0.0, sex: '', service: '', pic: '', vet: '' })
+    this.setState({ nombre: '', age: 0 , animal: '', color: '', weight: 0.0, sex: '', service: '', file: '', vet: '' })
+  }
+
+  onDrop = (files) => {
+    this.setState({ ...this.state, file: files[0] })
   }
 
   render() {
-    const { nombre, age, animal, color, weight, sex, service, pic, vet} = this.state 
+    const { nombre, age, animal, color, weight, sex, service, file, vet} = this.state 
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
@@ -102,14 +107,26 @@ class PetForm extends Component {
           label='Service'
           placeholder="Service Animal? yes/no"
         />
-        <Form.Input
-          name='pic'
-          value={pic}
-          onChange={this.handleChange}
-          // required
-          label='Picture'
-          placeholder="Picture URL"
-        />
+        <Dropzone
+          onDrop={this.onDrop}
+          multiple={false}
+        >
+          {({ getRootProps, getInputProps, isDragActive }) => {
+            return (
+              <div
+                {...getRootProps()}
+                style={styles.dropzone}
+              >
+                <input {...getInputProps()} />
+                {
+                  isDragActive ?
+                    <p>Drop files here...</p> :
+                    <p>Try dropping some files here, or click to select files to upload.</p>
+                }
+              </div>
+            )
+          }}
+        </Dropzone>
           <Form.Input
           name='vet'
           value={vet}
@@ -124,6 +141,19 @@ class PetForm extends Component {
       </Form>
     )
   }
+}
+
+const styles = {
+  dropzone: {
+    height: "150px",
+    width: "150px",
+    border: "1px dashed black",
+    borderRadius: "5px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "10px",
+  },
 }
 
 const ConnectedPetForm = (props) => (
