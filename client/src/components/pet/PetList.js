@@ -1,7 +1,6 @@
 import { List } from 'semantic-ui-react';	
 import { Link } from 'react-router-dom';	
 import Pet from './Pet';	
-
 const PetList = ({ pets, deletePet }) => (	
   <List divided relaxed>	
     <List.Item>	
@@ -10,7 +9,6 @@ const PetList = ({ pets, deletePet }) => (
           <Pet	
             petId={p.id}	
             {...p} 	
-
             deletePet={deletePet}	
           />	
         )}	
@@ -18,5 +16,4 @@ const PetList = ({ pets, deletePet }) => (
     </List.Item> 	
   </List>	
 )	
-
 export default PetList; 

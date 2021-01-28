@@ -18,19 +18,41 @@ class PetProvider extends Component {
       })
   }
   
-  addPet = (userId, pet, history) => {
-    axios.post('/api/pets', { pet })
+  addPet = (userId, newPet, history) => {
+    let pet = new FormData();
+    pet.append('file', newPet.file)
+    pet.append('user_id', userId)
+    pet.append('nombre', newPet.nombre)
+    pet.append('age', newPet.age)
+    pet.append('animal', newPet.animal)
+    pet.append('color', newPet.color)
+    pet.append('weight', newPet.weight)
+    pet.append('sex', newPet.sex)
+    pet.append('service', newPet.service)
+    pet.append('vet', newPet.vet)
+    axios.post('/api/pets', pet )
     .then(res => {
         const { pets } = this.state; 
-        this.setState({ pets: [...pets, res.data]})
+        this.setState({ pets: [...pets, res.data] })
       })
       .catch( err => {
         console.log(err);
       })
   }
 
-  updatePet = (id, pet) => {
-    axios.put(`/api/pets/${id}`, { pet })
+  updatePet = (userId, id, updatePet) => {
+    let pet = new FormData();
+    pet.append('file', updatePet.file)
+    pet.append('user_id', userId)
+    pet.append('nombre', updatePet.nombre)
+    pet.append('age', updatePet.age)
+    pet.append('animal', updatePet.animal)
+    pet.append('color', updatePet.color)
+    pet.append('weight', updatePet.weight)
+    pet.append('sex', updatePet.sex)
+    pet.append('service', updatePet.service)
+    pet.append('vet', updatePet.vet)
+    axios.put(`/api/pets/${id}`, pet )
       .then( res => {
         const pets = this.state.pets.map( p => {
           if (p.id === id) {

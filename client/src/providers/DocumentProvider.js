@@ -18,11 +18,16 @@ class DocumentProvider extends Component {
       })
   }
 
-  addDocument = (petId, document) => {
-    axios.post(`/api/pets/${petId}/documents`, { document })
-      .then(res => {
-        const { documents } = this.state 
-        this.setState({ documents: [...documents, res.data] })
+  addDocument = (petId, newDocument ) => {
+    let document = new FormData();
+    document.append('file', newDocument.file)
+    document.append('pet_id', petId)
+    document.append('title', newDocument.title)
+    document.append('description', newDocument.description)
+    axios.post(`/api/pets/${petId}/documents`, document)
+    .then(res => {
+        const { pets } = this.state; 
+        this.setState({ pets: [...pets, res.data] })
       })
       .catch( err => {
         console.log(err);

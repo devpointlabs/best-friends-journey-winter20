@@ -49,7 +49,7 @@ class Pet extends Component {
                   onClose={() => this.setEditOpen(false)}
                   onOpen={() => this.setEditOpen(true)}
                   open={editing}
-                  trigger={<Button icon='pencil' color='yellow' />}
+                  trigger={<Button icon='pencil' color='yellow'/>}
                 >
                   <Modal.Header>Edit {nombre}</Modal.Header>
                   <Modal.Content>
