@@ -4,9 +4,8 @@ const NoteContext = React.createContext();
 export const NoteConsumer = NoteContext.Consumer;
 
 class NoteProvider extends Component {
-
   state = { notes: [] }
-  getAllPetNote = (petId) => {
+  getAllNotes = (petId) => {
     axios.get(`/api/pets/${petId}/notes`)
       .then( res => {
         this.setState({ notes: res.data })
@@ -54,7 +53,7 @@ class NoteProvider extends Component {
     return(
       <NoteContext.Provider value={{
         ...this.state,
-        getAllPetNote: this.getAllPetNote,
+        getAllNotes: this.getAllNotes,
         addNote: this.addNote,
         deleteNote: this.deleteNote,
         updateNote: this.updateNote,

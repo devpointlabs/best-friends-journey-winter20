@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { Button, List, Modal, Image, Grid } from 'semantic-ui-react';
-import PetForm from './PetForm'
+import PetForm from './PetForm';
 import Documents from '../document/Documents';
 import Insurances from '../insurance/Insurances';
+import ConnectedNotes from '../note/Notes';
 
 class Pet extends Component {
   state = { 
@@ -14,8 +15,8 @@ class Pet extends Component {
   setEditOpen = (val) => this.setState({ editing: val })
 
   render() {
-    const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, updatePet } = this.props
-    const { open, editing } = this.state
+    const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, updatePet, Notes } = this.props
+    const { open, editing, } = this.state
     return (
         <>
           <List.Header>
@@ -37,9 +38,8 @@ class Pet extends Component {
                   <p>{service}</p>
                   <p>{vet}</p>
                   <Grid columns={2} divided>
-                    {/* <Insurances petId={petId}/>  */}
                     <Documents petId={petId}/> 
-                    {/* <p>notes</p> */}
+                    <ConnectedNotes petId={petId}/>
                   </Grid>
                 </Modal.Description>
               </Modal.Content>
