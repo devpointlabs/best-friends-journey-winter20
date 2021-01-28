@@ -3,7 +3,7 @@ import PetForm from './PetForm';
 import { PetConsumer } from '../../providers/PetProvider';
 import { useEffect, useState } from 'react';
 
-const Pets = ({ getAllPets, pets, deletePet }) => {
+const Pets = ({ getAllPets, pets, deletePet, }) => {
   const [ adding, setAdding ] = useState(false);
 
     useEffect( () => {                  

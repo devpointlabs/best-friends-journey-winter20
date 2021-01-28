@@ -2,7 +2,7 @@ import { List } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Pet from './Pet';
 
-const PetList = ({ pets, deletePet }) => (
+const PetList = ({ pets, deletePet, updatePet }) => (
   <List divided relaxed>
     <List.Item>
       <List.Content>
@@ -12,6 +12,7 @@ const PetList = ({ pets, deletePet }) => (
             {...p} 
 
             deletePet={deletePet}
+            updatePet={updatePet}
           />
         )}
       </List.Content>
