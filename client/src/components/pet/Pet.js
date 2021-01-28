@@ -38,15 +38,8 @@ class Pet extends Component {
                   <p>{service}</p>
                   <p>{vet}</p>
                   <Grid columns={2} divided>
-<<<<<<< HEAD:client/src/components/pet/Pet.js
-                    {/* <Insurances petId={petId}/>  */}
                     <Documents petId={petId}/> 
-                    {/* <p>notes</p> */}
-=======
-                    {/* <p>insurance</p> */}
-                    {/* <Documents petId={petId}/> */}
                     <ConnectedNotes petId={petId}/>
->>>>>>> aa66fa5 (Notes functions working):client/src/components/Pet/Pet.js
                   </Grid>
                 </Modal.Description>
               </Modal.Content>
