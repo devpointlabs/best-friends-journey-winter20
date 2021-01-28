@@ -5,7 +5,7 @@ import DocumentList from './DocumentList';
 
 class Documents extends Component {
   componentDidMount() {
-    const { getAllPetDocument, petId } = this.props
+    const { getAllPetDocument, petId} = this.props
     getAllPetDocument(petId)
   }
 
@@ -24,7 +24,7 @@ class Documents extends Component {
           updateDocument={updateDocument}
         />
       </>
-    )
+    ) 
   }
 }
 
