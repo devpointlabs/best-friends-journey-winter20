@@ -34,7 +34,7 @@ class Api::NotesController < ApplicationController
 
   private
     def set_pet
-      @pet = pet.find(params[:pet_id])
+      @pet = Pet.find(params[:pet_id])
     end
 
     def set_note
