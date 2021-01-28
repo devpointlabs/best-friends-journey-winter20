@@ -40,8 +40,19 @@ class PetProvider extends Component {
       })
   }
 
-  updatePet = (id, pet) => {
-    axios.put(`/api/pets/${id}`, { pet })
+  updatePet = (userId, id, updatePet) => {
+    let pet = new FormData();
+    pet.append('file', updatePet.file)
+    pet.append('user_id', userId)
+    pet.append('nombre', updatePet.nombre)
+    pet.append('age', updatePet.age)
+    pet.append('animal', updatePet.animal)
+    pet.append('color', updatePet.color)
+    pet.append('weight', updatePet.weight)
+    pet.append('sex', updatePet.sex)
+    pet.append('service', updatePet.service)
+    pet.append('vet', updatePet.vet)
+    axios.put(`/api/pets/${id}`, pet )
       .then( res => {
         const pets = this.state.pets.map( p => {
           if (p.id === id) {

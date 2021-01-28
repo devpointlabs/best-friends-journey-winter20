@@ -49,7 +49,6 @@ class Api::PetsController < ApplicationController
   end
 
   def update
-    @pet = current_user.pets.new()
     @pet.nombre = params[:nombre]
     @pet.age = params[:age]
     @pet.animal = params[:animal]
@@ -77,7 +76,6 @@ class Api::PetsController < ApplicationController
         render json: { errors: e }, status: 422
       end
     else
-      @pet.avatar = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
       if @pet.save
         render json: @pet
       else
