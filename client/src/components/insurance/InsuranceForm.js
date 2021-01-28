@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 
 
-class ItemForm extends Component {
-  state = { insurance_nombre: '', plan: '', phone: '' }
+class InsuranceForm extends Component {
+  state = { nombre: '', policy: '', phone: '' }
 
   componentDidMount() {
     if (this.props.id) {
-      const { insurance_nombre, plan, phone } = this.props
-      this.setState({ insurance_nombre, plan, phone })
+      const { nombre, policy, phone } = this.props
+      this.setState({ nombre, policy, phone })
     }
   }
 
@@ -19,9 +19,7 @@ class ItemForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
-    const { plan } = this.state
-    this.setState({ plan: '' (plan)})
+    e.preventDefault()
     if (this.props.id) {
       const { petId, updateInsurance, id, setOpen } = this.props
       updateInsurance(petId, id, this.state)
@@ -30,16 +28,16 @@ class ItemForm extends Component {
       const { addInsurance, petId } = this.props
       addInsurance(petId, this.state)
     }
-    this.setState({ insurance_nombre: '', plan: '', phone: '' })
+    this.setState({ nombre: '', policy: '', phone: '' })
   }
 
   render() {
-    const { insurance_nombre, plan, phone } = this.state 
+    const { nombre, policy, phone } = this.state 
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          name='insurance_nombre'
-          value={insurance_nombre}
+          name='nombre'
+          value={nombre}
           onChange={this.handleChange}
           required
           label='Insurance Name'

@@ -1,6 +1,7 @@
 import { Component } from 'react';
-// import InsuranceForm from './InsuranceForm';
 import { Button } from 'semantic-ui-react';
+import InsuranceForm from './InsuranceForm';
+
 
 class Insurance extends Component {
   state = { open: false }
@@ -8,16 +9,15 @@ class Insurance extends Component {
   setOpen = (val) => this.setState({ open: val })
 
   render() {
-    const { insuranceId, nombre, phone, policy, deleteInsurance, } = this.props
+    const { insuranceId, nombre, phone, policy, deleteInsurance, updateInsurance, petId} = this.props
     const { open } = this.state
     return (
         <>
-        test insurances 
             <p>{nombre}</p>
             <p>{phone}</p>
             <p>{policy}</p>
             <Button icon='trash' color='red' onClick={() => deleteInsurance (insuranceId)} />
-    {/* //   <InsuranceForm /> */}
+    
         </>
     )
   }

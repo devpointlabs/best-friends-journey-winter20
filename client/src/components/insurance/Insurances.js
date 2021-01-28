@@ -1,12 +1,15 @@
-// import InsuranceForm from './InsuranceForm';
-import InsuranceList from './InsuranceList';
+import {Component} from 'react';
 import { InsuranceConsumer } from '../../providers/InsuranceProvider';
-import { useEffect, useState } from 'react';
 import { Button, List, Modal, Image, Grid } from 'semantic-ui-react';
+import { useEffect, useState } from 'react';
+import InsuranceForm from './InsuranceForm';
+import InsuranceList from './InsuranceList';
+
+// import { Form } from 'semantic-ui-react';
 
 
 
-const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, nombre }) => {
+const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, nombre, addInsurance, petId }) => {
     const [open,setOpen]=useState(false)
     // state = { 
     //     open: false, 
@@ -16,7 +19,7 @@ const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, nombre })
     //   setOpen = (val) => this.setState({ open: val })
     //   setEditOpen = (val) => this.setState({ editing: val })
     useEffect( () => {                  
-        getAllPetInsurance()
+        getAllPetInsurance(petId)
     }, [])
     
 
@@ -25,27 +28,29 @@ const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, nombre })
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={<Button>insurances</Button>}
+        trigger={<Button>insurance</Button>}
       >
         <Modal.Header>{nombre}</Modal.Header>
         <Modal.Content image>
           {/* <Image size='medium' src={pic} wrapped /> */}
           <Modal.Description>
-          <h1> Insurances </h1>
-            {/* <InsurancesForm addInsurance={value.addInsurance} /> */}
-            {/* <InsuranceList 
-                // insurances={insurances} 
-                deleteInsurance={deleteInsurance} */}
-            {/* /> */}
+          <h1> Insurance </h1>
+            <InsuranceForm addInsurance={addInsurance} petId={petId} /> 
+  
+            <InsuranceList  
+              insurances={insurances} 
+              petId={petId}
+              deleteInsurance={deleteInsurance} 
+            />
             <Grid columns={2} divided>
-              {/* <Insurances petId={petId}/>  */}
+             
            
             </Grid>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
           {/* <Button icon='trash' color='red' onClick={() => deletePet(petId)} /> */}
-          {/* <Modal
+          {/*<Modal
             onClose={() => this.setEditOpen(false)}
             onOpen={() => this.setEditOpen(true)}
             open={editing}
