@@ -13,6 +13,7 @@ class Documents extends Component {
     const { petId, addDocument, documents, deleteDocument, updateDocument } = this.props
     return(
       <>
+        <h1>Documents</h1>
         <DocumentForm 
           petId={petId}
           addDocument={addDocument}

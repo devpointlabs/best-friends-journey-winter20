@@ -20,11 +20,8 @@ class DocumentForm extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    const { addDocument, petId } = this.props
-    addDocument(petId, this.state)
-    this.setState({ title: '', description: '', file: ''})
     if (this.props.id) {
-      const { petId, updateDocument, id, setOpen } = this.prop
+      const { petId, updateDocument, id, setOpen } = this.props 
       updateDocument(petId, id, this.state)
       setOpen(false)
     } else {

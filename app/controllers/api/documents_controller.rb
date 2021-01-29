@@ -14,7 +14,7 @@ class Api::DocumentsController < ApplicationController
       @document = @pet.documents.new()
       @document.title = params[:title]
       @document.description = params[:description]
-      file = params [:file]
+      file = params[:file]
       if file && file != ""
         begin
           ext = File.extname(file.tempfile)
@@ -44,10 +44,9 @@ class Api::DocumentsController < ApplicationController
     end
   
     def update
-        @document = @pet.documents.new()
-        @document.title = params[:title]
-        @document.description = params[:description]
-      file = params [:file]
+      @document.title = params[:title]
+      @document.description = params[:description]
+      file = params[:file]
       if file && file != ""
         begin
           ext = File.extname(file.tempfile)
@@ -66,7 +65,6 @@ class Api::DocumentsController < ApplicationController
           render json: { errors: e }, status: 422
         end
       else
-        @document.picture = 'https://images.unsplash.com/photo-1493916665398-143bdeabe500?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
         if @document.save
           render json: @document
         else
@@ -79,7 +77,7 @@ class Api::DocumentsController < ApplicationController
   
     def destroy
       @document.destroy
-      render json: { message: 'document Released'}
+      render json: { message: 'document deleted'}
     end
   
   private
