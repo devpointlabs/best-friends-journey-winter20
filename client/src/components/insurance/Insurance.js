@@ -16,7 +16,7 @@ class Insurance extends Component {
             <p>{nombre}</p>
             <p>{phone}</p>
             <p>{policy}</p>
-            <Button icon='trash' color='red' onClick={() => deleteInsurance (insuranceId)} />
+            <Button icon='trash' color='red' onClick={() => deleteInsurance(petId, insuranceId)} />
     
         </>
     )
