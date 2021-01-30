@@ -10,6 +10,7 @@ import Pets from './components/pet/Pets';
 import Insurances from './components/insurance/Insurances';
 import Notes from './components/note/Notes';
 import Profile from './components/profile/Profile';
+import Developers from './components/shared/Developers';
 
 const App = () => (
   <>
@@ -24,6 +25,7 @@ const App = () => (
           <Route exact path="/insurances" component={Insurances} />
           <Route exact path="/notes" component={Notes} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/developers" component={Developers} />
           <Route component={NoMatch} />
         </Switch>
       </Container>

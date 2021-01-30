@@ -64,12 +64,20 @@ class Navbar extends Component {
               active={this.props.location.pathname === '/'}
             />
           </Link>
+          <Link to='/developers'>
+            <Menu.Item
+              id='developers'
+              name='developers'
+              active={location.pathname === '/developers'}
+            />
+          </Link>
             { this.rightNavItems() }
         </Menu>
       </div>
     )
   }
 }
+
 
 const ConnectedNavbar = (props) => (
   <AuthConsumer> 
