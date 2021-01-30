@@ -1,5 +1,5 @@
 import NoteList from './NoteList';
- import NoteForm from './NoteForm';
+import NoteForm from './NoteForm';
 import { NoteConsumer } from '../../providers/NoteProvider';
 import { useEffect, useState } from 'react';
 
