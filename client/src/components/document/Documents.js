@@ -32,7 +32,7 @@ class Documents extends Component {
 const ConnectedDocuments = (props) => (
   <DocumentConsumer>
       { value => (
-          <Documents {...props} {...value} />
+        <Documents {...props} {...value} />
       )}
   </DocumentConsumer>
 )
