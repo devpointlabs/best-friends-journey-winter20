@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { Form } from 'semantic-ui-react';
+import {InsuranceConsumer} from '../../providers/InsuranceProvider';
 
 
 class InsuranceForm extends Component {
@@ -19,9 +20,9 @@ class InsuranceForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (this.props.id) {
-      const { petId, updateInsurance, id, setOpen } = this.props
+      const { petId, updateInsurance, id, setOpen, deleteInsurance } = this.props
       updateInsurance(petId, id, this.state)
       setOpen(false)
     } else {
@@ -66,4 +67,27 @@ class InsuranceForm extends Component {
   }
 }
 
-export default InsuranceForm;
+const ConnectedInsuranceForm = (props) => (
+  <InsuranceConsumer>
+    { Insurance => (
+      <InsuranceForm {...props} {...Insurance} />
+    )}
+  </InsuranceConsumer>
+)
+
+
+export default ConnectedInsuranceForm;
+
+
+// handleSubmit = (e) => {
+//   e.preventDefault()
+//   if (this.props.id) {
+//     const { petId, updateInsurance, id, setOpen } = this.props
+//     updateInsurance(petId, id, this.state)
+//     setOpen(false)
+//   } else {
+//     const { addInsurance, petId } = this.props
+//     addInsurance(petId, this.state)
+//   }
+//   this.setState({ nombre: '', policy: '', phone: '' })
+// }
