@@ -9,6 +9,7 @@ import FetchUser from './components/auth/FetchUser';
 import Pets from './components/pet/Pets';
 import Insurances from './components/insurance/Insurances';
 import Notes from './components/note/Notes';
+import Profile from './components/profile/Profile';
 
 const App = () => (
   <>
@@ -22,6 +23,7 @@ const App = () => (
           <Route exact path="/pets" component={Pets} />
           <Route exact path="/insurances" component={Insurances} />
           <Route exact path="/notes" component={Notes} />
+          <Route exact path="/profile" component={Profile} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
