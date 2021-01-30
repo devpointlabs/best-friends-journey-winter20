@@ -60,6 +60,7 @@ class Pet extends Component {
             </Modal>
            <Insurances
             nombre={nombre}
+            petId={petId}
            />
 
           </List.Header>

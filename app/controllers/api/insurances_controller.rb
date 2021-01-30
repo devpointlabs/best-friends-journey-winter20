@@ -1,6 +1,6 @@
 class Api::InsurancesController < ApplicationController
   before_action :set_pet
-  before_action :set_insurance, only: [:show, :update, :destroy]
+  before_action :set_insurance, except: [:index, :create ]
 
   def index
     render json: @pet.insurances
@@ -34,7 +34,7 @@ class Api::InsurancesController < ApplicationController
 
   private
     def set_pet
-      @pet = pet.find(params[:pet_id])
+      @pet = Pet.find(params[:pet_id])
     end
 
     def set_insurance
@@ -42,6 +42,6 @@ class Api::InsurancesController < ApplicationController
     end
 
     def insurance_params
-      params.require(:insurance).permit(:nombre, :phone, :policy )
+      params.require(:insurance).permit(:nombre, :policy, :phone, )
     end
 end
