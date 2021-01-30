@@ -18,7 +18,13 @@ class Navbar extends Component {
               active={location.pathname === '/pets'}
             />
           </Link>
-
+          <Link to='/profile'>
+            <Menu.Item
+              id='profile'
+              name='User Profile'
+              active={location.pathname === '/profile'}
+            />
+          </Link>
           <Menu.Item
             name='logout'
             onClick={ () => handleLogout(this.props.history) }

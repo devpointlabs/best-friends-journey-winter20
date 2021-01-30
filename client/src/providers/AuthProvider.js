@@ -39,6 +39,19 @@ class AuthProvider extends Component {
       .catch( res => {
         console.log(res)
       })
+
+  }
+
+  updateProfile = (id,user) => {
+    axios.put(`/api/users/${id}`, user)
+    .then( res => {
+      // this.setUser({ user: null })
+      // history.push('/login')
+    })
+    .catch( res => {
+      console.log(res)
+    })
+    
   }
 
   render() {
@@ -48,6 +61,7 @@ class AuthProvider extends Component {
         handleRegister: this.handleRegister, 
         handleLogin: this.handleLogin,
         handleLogout: this.handleLogout,
+        updateProfile: this.updateProfile,
         authenticated: this.state.user !== null,
         setUser: (user) => this.setState({ user })
       }}>

@@ -1,4 +1,5 @@
-User.create(email: "test@test.com", password: "password")
+User.create(email: "test@test.com", password: "password", first_name: "mike", last_name: "smith")
+
 
 5.times do
     pet = Pet.create(
