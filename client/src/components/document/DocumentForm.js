@@ -36,7 +36,7 @@ class DocumentForm extends Component {
   }
 
   render() {
-    const { title, description, file } = this.state
+    const { title, description } = this.state
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
