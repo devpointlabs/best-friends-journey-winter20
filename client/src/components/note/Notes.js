@@ -12,8 +12,8 @@ const Notes = ({ getAllNotes, notes, deleteNote, updateNote, petId }) => {
     
     return (
         <>
-            <h1> Notes </h1>
-            <button onClick={() => setAdding(!adding)}>Add New Note</button>
+            {/* <h1> Notes </h1> */}
+            <button onClick={() => setAdding(!adding)}>Add Note</button>
             { adding && <NoteForm petId={petId} /> }
             <NoteList 
                 notes={notes} 
@@ -21,11 +21,9 @@ const Notes = ({ getAllNotes, notes, deleteNote, updateNote, petId }) => {
                 updateNote={updateNote}
                 petId={petId}
             />
-
         </>
     )
 }
-
 
 const ConnectedNotes = (props) => (
     <NoteConsumer>

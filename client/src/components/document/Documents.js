@@ -18,7 +18,7 @@ class Documents extends Component {
     const { showForm } = this.state 
     return( 
       <>
-        <h1> Documents </h1>
+        {/* <h1> Documents </h1> */}
         {
           showForm ?
           <DocumentForm 

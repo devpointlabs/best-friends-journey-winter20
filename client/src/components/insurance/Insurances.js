@@ -12,7 +12,7 @@ const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, addInsura
 
   return (
     <>
-      <h1> Insurance </h1>
+      {/* <h1> Insurance </h1> */}
       <button onClick={() => setAdding(!adding)}>Add Insurance</button>
       { adding && <InsuranceForm petId={petId} /> }
       <InsuranceList  

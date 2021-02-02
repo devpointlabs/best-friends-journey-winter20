@@ -31,7 +31,9 @@ class Pet extends Component {
               onClose={() => this.setOpen(false)}
               onOpen={() => this.setOpen(true)}
               open={open}
-              trigger={<Button>{nombre}</Button>}
+              trigger={<Button.Group fluid inverted size='huge' color='brown'> 
+                        <Button>{nombre}</Button>
+                      </Button.Group>}
             >
               <Modal.Header>{nombre}</Modal.Header>
               <Modal.Content image> 
