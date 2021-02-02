@@ -25,8 +25,9 @@ class DocumentForm extends Component {
       updateDocument(petId, id, this.state)
       setOpen(false)
     } else {
-      const { addDocument, petId } = this.props
+      const { addDocument, petId, openForm } = this.props
       addDocument(petId, this.state)
+      openForm(false)
     }
     this.setState({ title: '', description: '', file: '' })
   }

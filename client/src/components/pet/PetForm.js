@@ -47,7 +47,7 @@ class PetForm extends Component {
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          name='nombre'
+          name='nombre' 
           value={nombre}
           onChange={this.handleChange}
           // required

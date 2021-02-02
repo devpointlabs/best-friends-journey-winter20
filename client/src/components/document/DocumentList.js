@@ -4,7 +4,7 @@ import Document from './Document';
 
 const DocumentList = ({ documents, deleteDocument, petId, updateDocument }) => (
   // <Fade bottom cascade>
-    <Grid columns={3}>
+    <Grid columns={1}>
       {
         documents.map( d => 
           <Document  

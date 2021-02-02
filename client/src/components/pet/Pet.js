@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { Button, List, Modal, Image, Grid } from 'semantic-ui-react';
+import { Button, List, Modal, Image, Grid, Tab } from 'semantic-ui-react';
 import PetForm from './PetForm';
 import Documents from '../document/Documents';
 import Insurances from '../insurance/Insurances';
 import ConnectedNotes from '../note/Notes';
+import React from 'react';
 
 class Pet extends Component {
   state = { 
@@ -17,6 +18,12 @@ class Pet extends Component {
   render() {
     const { petId, nombre, age, animal, color, weight, sex, service, pic, vet, user_id, deletePet, updatePet, Notes } = this.props
     const { open, editing, } = this.state
+    const panes = [
+      { menuItem: 'Documents', render: () => <Tab.Pane><Documents petId={petId}/></Tab.Pane> },
+      { menuItem: 'Notes', render: () => <Tab.Pane><ConnectedNotes petId={petId}/></Tab.Pane> },
+      { menuItem: 'Insurances', render: () => <Tab.Pane><Insurances nombre={nombre} petId={petId}/></Tab.Pane> },
+    ]
+
     return (
         <>
           <List.Header>
@@ -27,20 +34,17 @@ class Pet extends Component {
               trigger={<Button>{nombre}</Button>}
             >
               <Modal.Header>{nombre}</Modal.Header>
-              <Modal.Content image>
+              <Modal.Content image> 
                 <Image size='medium' src={pic} wrapped />
                 <Modal.Description>
-                  <p>{age}</p>
-                  <p>{animal}</p>
-                  <p>{color}</p>
-                  <p>{weight}</p>
-                  <p>{sex}</p>
-                  <p>{service}</p>
-                  <p>{vet}</p>
-                  <Grid columns={2} divided>
-                    <Documents petId={petId}/> 
-                    <ConnectedNotes petId={petId}/>
-                  </Grid>
+                  <p><b>Age:</b> {age}</p>
+                  <p><b>Animal:</b> {animal}</p>
+                  <p><b>Color:</b> {color}</p>
+                  <p><b>Weight:</b> {weight}</p>
+                  <p><b>Sex:</b> {sex}</p>
+                  <p><b>Service:</b> {service}</p>
+                  <p><b>Vet:</b> {vet}</p>
+                  <Tab panes={panes} />                
                 </Modal.Description>
               </Modal.Content>
               <Modal.Actions>
@@ -58,10 +62,7 @@ class Pet extends Component {
                 </Modal>
               </Modal.Actions>
             </Modal>
-           <Insurances
-            nombre={nombre}
-            petId={petId}
-           />
+           
 
           </List.Header>
         </>

@@ -4,20 +4,31 @@ import DocumentForm from './DocumentForm';
 import DocumentList from './DocumentList';
 
 class Documents extends Component {
+  state = { showForm: false }
+
   componentDidMount() {
     const { getAllPetDocument, petId} = this.props
     getAllPetDocument(petId)
   }
 
+  openForm = (val) => this.setState({showForm: val})
+
   render() {
     const { petId, addDocument, documents, deleteDocument, updateDocument } = this.props
-    return(
+    const { showForm } = this.state 
+    return( 
       <>
-        <h1>Documents</h1>
-        <DocumentForm 
-          petId={petId}
-          addDocument={addDocument}
-        />
+        <h1> Documents </h1>
+        {
+          showForm ?
+          <DocumentForm 
+            petId={petId}
+            addDocument={addDocument}
+            openForm={this.openForm}
+          />
+          :
+          <button onClick={() => this.openForm(true)}>Add Document</button>
+        }
         <DocumentList 
           petId={petId}
           documents={documents}
