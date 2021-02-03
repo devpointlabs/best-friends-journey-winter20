@@ -1,0 +1,67 @@
+import React from 'react';
+import { Button, Header, Image} from 'semantic-ui-react';
+
+const Developers = () => (
+  <>
+    <Header as='h1'>The Development Team</Header>
+
+    
+    <div>
+      </div>
+      <Header as='h2'>Mel Fabella</Header>
+      {/* <img src="#" alt="Picture of Mel Fabella"> */}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p>email</p>
+      <div>
+      <Button target="_blank" href="https://www.linkedin.com/in/m-fabella/" primary>LinkedIn</Button>
+      <br></br>
+      <Button target="_blank" href="https://github.com/MelFabella" secondary>GitHub</Button>
+    </div>
+
+    <div>
+      <Header as='h2'>Sydne Hanks</Header>
+      <Image src='/images/Sydne.jpg' size='small' />
+      {/* <img src="#" alt="Picture of Sydne Hanks"> */}
+      <p>Going to DevPoint was one of the best decisions I’ve made for myself. The teachers were incredibly knowledgeable, and I learned a great deal in a short amount of time.  I have a portfolio of projects to demonstrate my newly-acquired expertise.  My most prized is the final project.</p>
+      <p>The final project of the cohort I experimented with the client-driven web development model of Best Friends Journey.</p>
+      <p>In this project I attempted to approximate the development process of a “real world” web application.  This was large yet broken down into parts.  This project encouraged my development and implementation.</p>
+      <p>I cannot be more proud of my classmates and I to have accomplished our finals as a team. This is by far the most rewarding project of them all.</p>
+      <p>email</p>
+      <div>
+        <Button target="_blank" href="https://www.linkedin.com/in/sydnehanks/" primary>LinkedIn</Button>
+        <br></br>
+        <Button target="_blank" href="https://github.com/sydnehanks" secondary>GitHub</Button>
+      </div>
+    </div>
+
+    <div>
+      <Header as='h2'>Parker Jones</Header>
+      {/* <img src="#" alt="Picture of Parker Jones"> */}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p>email</p>
+      <div>
+        <Button target="_blank" href="https://www.linkedin.com/in/parkerhjones/" primary>LinkedIn</Button>
+        <br></br>
+        <Button target="_blank" href="https://github.com/ParkerHJones" secondary>GitHub</Button>
+      </div>
+    </div>
+
+    <div>
+      <Header as='h2'>Nikhil Math</Header>
+      {/* <img src="#" alt="Picture of Nikhil Math"> */}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p>erulemath@gmail.com</p>
+      <div>
+        <Button target="_blank" href="https://www.linkedin.com/in/nikhil-math/"   primary>LinkedIn</Button>
+        <br></br>
+        <Button target="_blank" href="https://github.com/NikhilMath" secondary>GitHub</Button>
+      </div>
+    </div>
+    <br></br>
+    <br></br>
+    <h2>With Special Thanks DevPoint Labs</h2>
+  </>
+
+)
+
+export default Developers;
