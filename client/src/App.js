@@ -11,6 +11,10 @@ import Insurances from './components/insurance/Insurances';
 import Notes from './components/note/Notes';
 import Profile from './components/profile/Profile';
 import Developers from './components/shared/Developers';
+import Footer from './components/shared/Footer';
+// import Font from 'https://fonts.googleapis.com/css?family=Josefin+Sans';
+
+
 
 const App = () => (
   <>
@@ -30,6 +34,7 @@ const App = () => (
         </Switch>
       </Container>
     </FetchUser>
+    <Footer/>
   </>
 )
 

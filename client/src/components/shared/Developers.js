@@ -59,9 +59,9 @@ const Developers = () => (
         <Image src={SydneImage} size='small' floated='left' />
         <Paragraphs>Going to DevPoint was one of the best decisions I’ve made for myself. The teachers were incredibly knowledgeable, and I learned a great deal in a short amount of time.  I have a portfolio of projects to demonstrate my newly-acquired expertise.  My most prized is the final project.</Paragraphs>
         <Paragraphs>The final project of the cohort I experimented with the client-driven web development model of Best Friends Journey.</Paragraphs>
-        <Paragraphs>In this project I attempted to approximate the development process of a “real world” web application.  This was large yet broken down into parts.  This project encouraged my development and implementation.</Paragraphs>
-        <Paragraphs>I cannot be more proud of my classmates and I to have accomplished our finals as a team. This is by far the most rewarding project of them all.</Paragraphs>
-        <Paragraphs>email</Paragraphs>
+        <Paragraphs>In this project I attempted to approximate the development process of a “real world” web application, this was large yet broken down into parts.  This project encouraged my development and implementation.</Paragraphs>
+        <Paragraphs>I cannot be more proud of my classmates and I to have accomplished our final as a team. This is by far the most rewarding project of them all.</Paragraphs>
+        <Paragraphs>sydnehanks@gmail.com</Paragraphs>
         <div>
           <Button fluid color='linkedin' target="_blank" href="https://www.linkedin.com/in/sydnehanks/"><Icon name='linkedin' />LinkedIn</Button>
           <br></br>
