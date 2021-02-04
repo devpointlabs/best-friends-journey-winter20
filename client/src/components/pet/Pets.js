@@ -12,7 +12,7 @@ const Pets = ({ getAllPets, pets, deletePet, }) => {
     
     return (
         <>
-            <h1> Pets </h1>
+            <h1> My Pets </h1>
             {/* <PetsForm addPet={value.addPet} /> */}
             <button onClick={() => setAdding(!adding)}>Add New Pet</button>
             { adding && <PetForm /> }
