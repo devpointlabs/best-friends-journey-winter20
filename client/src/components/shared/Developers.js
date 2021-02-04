@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Divider, Grid, Segment, Header, Image, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import SydneImage from './images/Sydne.jpg';
+import ParkerImage from './images/Parker.jpeg';
+import NikhilImage from './images/Nikhil.jpg'
 
 const TopHeader = styled.header`
   text-align: center;
@@ -71,8 +73,8 @@ const Developers = () => (
       <Grid.Column>
         <Header as='h2'><H2Header>Parker Jones</H2Header></Header>
         <br></br>
-        <Image src='http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' size='small' floated='left' />
-        <Paragraphs>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Paragraphs>
+        <Image src={ParkerImage} size='small' floated='left' />
+        <Paragraphs>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa</Paragraphs>
         <Paragraphs>email</Paragraphs>
         <div>
           <Button fluid color='linkedin' target="_blank" href="https://www.linkedin.com/in/parkerhjones/"><Icon name='linkedin' />LinkedIn</Button>
@@ -85,8 +87,9 @@ const Developers = () => (
 
         <Header as='h2'><H2Header>Nikhil Math</H2Header></Header>
         <br></br>
-        <Image src='http://s3.amazonaws.com/37assets/svn/765-default-avatar.png' size='small' floated='left' />
-        <Paragraphs>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Paragraphs>
+        <Image src={NikhilImage} size='small' floated='left' />
+        <Paragraphs>One of my favorite parts of working with Best Friends Journey was the design aspect of the project. I have always liked doing design work, but I never enjoyed drawing with paper and pencil. This project, and the many other projects I have done at DevPoint Labs, has taught me that making websites aesthetically pleasing is something I hope I can do more of as a career soon. </Paragraphs>
+        <Paragraphs>I have learned a great deal about web development in the past couple of months, more than I thought I could ever learn in a couple of months. I enjoy making websites, and I hope I can do this more often. The biggest thing I have learned from this course is teaching me how to plan and execute a project with a group of people and how scrums work. Group projects are challenging when communication isn’t the best, but thankfully my team was nothing short of having excellent communication skills. I could not have come close to being this successful on this project without the help of my fellow teammates; I give thanks to them a lot.</Paragraphs>
         <Paragraphs>erulemath@gmail.com</Paragraphs>
         <div>
           <Button fluid color='linkedin' target="_blank" href="https://www.linkedin.com/in/nikhil-math/"  ><Icon name='linkedin' />LinkedIn</Button>
