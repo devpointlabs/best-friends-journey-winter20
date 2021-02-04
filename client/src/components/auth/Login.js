@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Button, Form, Segment, Header } from 'semantic-ui-react';
+import * as S from './authStyles';
 
 class Login extends Component {
   state = { email: '', password: '' }
@@ -20,11 +21,14 @@ class Login extends Component {
     const { email, password, } = this.state;
   
     return (
-      <Segment basic>
-        <Header as='h1' textAlign='center'>Login</Header>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Input
-            label="Email"
+      // <Segment basic>
+      <S.Wrapper>
+        <br></br>
+        <Header as='h1' textAlign='center' color='grey'>Login</Header>
+        <br></br>
+        <S.Form onSubmit={this.handleSubmit}>
+          <S.FormInput
+            // label="Email"
             autoFocus
             required         
             name='email'
@@ -32,8 +36,8 @@ class Login extends Component {
             placeholder='Email'
             onChange={this.handleChange}
           />
-          <Form.Input
-            label="Password"
+          <S.FormInput
+            // label="Password"
             required
             name='password'
             value={password}
@@ -41,14 +45,55 @@ class Login extends Component {
             type='password'
             onChange={this.handleChange}
           />
-          <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
-          </Segment>
-        </Form>
-      </Segment>
+          {/* <Segment textAlign='center' basic> */}
+          <S.Button>LOG IN</S.Button>
+        </S.Form>
+        {/* </Segment> */}
+        </S.Wrapper>
     )
   }
 }
+
+// const StyledForm = styled.form`
+// display: flex;
+// margin: 2rem 0 0;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// `
+
+// const StyleFormInput = styled.input`
+//   padding: 2rem !important;
+//   margin: 1rem 5rem 2rem;
+//   background: white;
+//   border-radius: 5px;
+//   border: 1px solid #E6E6E6;
+//   color: white;
+//   cursor: pointer;
+//   box-sizing: border-box;
+//   width: 425px;
+//   outline: none;
+//   `;
+
+
+//   const StyledButton = styled.button`
+//   background-color: #C9DAB8;
+//   min-width: 400px;
+//   padding: 24px 12px;
+//   font-size: 15px;
+//   color: white; 
+//   margin-top: 1rem;
+//   border: none;
+//   border-radius: 25px;
+//   box-sizing: content-box;
+//   height: 100%;
+//   `;
+
+//   const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   `
 
 const ConnectedLogin = (props) => (
   <AuthConsumer>
