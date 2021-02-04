@@ -5,6 +5,10 @@ import font from '../../App.js';
 export const NavMenu = styled(Menu)`
   height: 80px;
   background: #231F20 !important;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  
 `
 export const FooterContainer = styled.div`
   height: 80px;
@@ -30,8 +34,7 @@ export const NavagationLink = styled(Menu.Item)`
   justify: center;
   color: palevioletred;
   color:white !important;
-  display: grid;
-  place-content: center;
+  padding: 10em;
   font-align: center;
   background: #FEFFF2
 `
