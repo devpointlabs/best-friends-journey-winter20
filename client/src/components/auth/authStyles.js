@@ -14,8 +14,7 @@ export const FormInput = styled.input`
   background: white;
   border-radius: 5px;
   border: 1px solid #E6E6E6;
-  color: white;
-  cursor: pointer;
+  color: none;
   box-sizing: border-box;
   width: 462px;
   outline: none;
