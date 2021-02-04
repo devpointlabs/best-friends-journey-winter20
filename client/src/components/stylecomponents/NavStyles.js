@@ -38,3 +38,12 @@ export const NavagationLink = styled(Menu.Item)`
   font-align: center;
   background: #FEFFF2
 `
+export const NewPetButton = styled.button`
+  background-color: #369EF5;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: quicksand;
+  font-size: 14px;
+  float: right;
+`
