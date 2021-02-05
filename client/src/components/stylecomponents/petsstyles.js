@@ -7,6 +7,7 @@ export const PetBackground = styled.div`
   background-repeat: no-repeat;
   background-size: cover; 
   height: 100vh;
+  z-index: -1;
 `
 
 export const PetTable = styled.table`

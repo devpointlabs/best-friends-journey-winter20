@@ -2,6 +2,8 @@ import NoteList from './NoteList';
 import NoteForm from './NoteForm';
 import { NoteConsumer } from '../../providers/NoteProvider';
 import { useEffect, useState } from 'react';
+import { MainButton } from '../stylecomponents/homestyles';
+
 
 const Notes = ({ getAllNotes, notes, deleteNote, updateNote, petId }) => {
   const [ adding, setAdding ] = useState(false);
@@ -12,8 +14,9 @@ const Notes = ({ getAllNotes, notes, deleteNote, updateNote, petId }) => {
     
     return (
         <>
-            {/* <h1> Notes </h1> */}
-            <button onClick={() => setAdding(!adding)}>Add Note</button>
+            <MainButton onClick={() => setAdding(!adding)}>Add Note</MainButton>
+            <br />
+            <br />
             { adding && <NoteForm petId={petId} /> }
             <NoteList 
                 notes={notes} 

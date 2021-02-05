@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { DocumentConsumer } from '../../providers/DocumentProvider';
 import DocumentForm from './DocumentForm';
 import DocumentList from './DocumentList';
+import { MainButton } from '../stylecomponents/homestyles';
+
 
 class Documents extends Component {
   state = { showForm: false }
@@ -21,13 +23,17 @@ class Documents extends Component {
         {/* <h1> Documents </h1> */}
         {
           showForm ?
-          <DocumentForm 
-            petId={petId}
-            addDocument={addDocument}
-            openForm={this.openForm}
-          />
+            <DocumentForm 
+              petId={petId}
+              addDocument={addDocument}
+              openForm={this.openForm}
+            />
           :
-          <button onClick={() => this.openForm(true)}>Add Document</button>
+            <>
+              <MainButton onClick={() => this.openForm(true)}>Add Document</MainButton>
+              <br />
+              <br />
+            </>
         }
         <DocumentList 
           petId={petId}
