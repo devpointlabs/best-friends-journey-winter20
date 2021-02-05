@@ -2,7 +2,7 @@ import PetList from './PetList';
 import PetForm from './PetForm';
 import { PetConsumer } from '../../providers/PetProvider';
 import { useEffect, useState } from 'react';
-import { NewPetButton } from '../stylecomponents/NavStyles'
+import { NewPetButton } from '../stylecomponents/NavStyles';
 
 const Pets = ({ getAllPets, pets, deletePet, }) => {
   const [ adding, setAdding ] = useState(false);
