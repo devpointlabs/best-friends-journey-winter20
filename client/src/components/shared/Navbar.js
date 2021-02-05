@@ -4,7 +4,7 @@ import { Menu, MenuItem} from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { NavMenu, NavagationLink } from '../stylecomponents/NavStyles';
 import logo from '../../components/shared/images/paw.png';
-// Quicksand-VariableFont_wght.ttf
+
 class Navbar extends Component {
   
   rightNavItems = () => {
@@ -81,43 +81,6 @@ class Navbar extends Component {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-//   render() {
-//     return (
-//       <div>
-//         <Menu pointing secondary>
-//           <Link to='/'>
-//             <Menu.Item
-//               name='home'
-//               id='home'
-//               active={this.props.location.pathname === '/'}
-//             />
-//           </Link>
-//           <Link to='/developers'>
-//             <Menu.Item
-//               id='developers'
-//               name='developers'
-//               active={location.pathname === '/developers'}
-//             />
-//           </Link>
-//             { this.rightNavItems() }
-//         </Menu>
-//       </div>
-//     )
-//   }
-// }
-
-
 const ConnectedNavbar = (props) => (
   <AuthConsumer> 
     { auth => 
@@ -126,5 +89,4 @@ const ConnectedNavbar = (props) => (
   </AuthConsumer>
 )
  
-
 export default withRouter(ConnectedNavbar);
