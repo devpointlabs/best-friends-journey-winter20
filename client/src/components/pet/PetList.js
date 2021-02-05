@@ -1,19 +1,19 @@
 import { List } from 'semantic-ui-react';	
 import { Link } from 'react-router-dom';	
-import Pet from './Pet';	
+import Pet from './Pet';
+import { PetRow } from '../stylecomponents/petsstyles';
+
 const PetList = ({ pets, deletePet }) => (	
-  <List divided relaxed>	
-    <List.Item>	
-      <List.Content>	
-        { pets.map( p => 	
-          <Pet	
-            petId={p.id}	
-            {...p} 	
-            deletePet={deletePet}	
-          />	
-        )}	
-      </List.Content>	
-    </List.Item> 	
-  </List>	
+  <>	
+    {pets.map(p => 	
+      <PetRow>
+        <Pet	
+          petId={p.id}	
+          {...p} 	
+          deletePet={deletePet}	
+        />	
+      </PetRow>
+    )}		
+  </>	
 )	
 export default PetList; 
