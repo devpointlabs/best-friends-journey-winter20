@@ -2,6 +2,7 @@ import { InsuranceConsumer } from '../../providers/InsuranceProvider';
 import { useEffect, useState } from 'react';
 import InsuranceForm from './InsuranceForm';
 import InsuranceList from './InsuranceList';
+import { MainButton } from '../stylecomponents/homestyles';
 
 const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, addInsurance, petId }) => {
   const [ adding, setAdding ] = useState(false);
@@ -13,7 +14,9 @@ const Insurances = ({ getAllPetInsurance, insurances, deleteInsurance, addInsura
   return (
     <>
       {/* <h1> Insurance </h1> */}
-      <button onClick={() => setAdding(!adding)}>Add Insurance</button>
+      <MainButton onClick={() => setAdding(!adding)}>Add Insurance</MainButton>
+      <br />
+      <br />
       { adding && <InsuranceForm petId={petId} /> }
       <InsuranceList  
         insurances={insurances} 

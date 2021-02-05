@@ -60,13 +60,25 @@ class Navbar extends Component {
     return (
       <div>
         <NavMenu pointing secondary>
-          <Link to='/'>
-            <img src={logo} width="80"
-              name='home'
-              id='home'
-              active={this.props.location.pathname === '/'}
-            />
-          </Link>
+          
+          {
+            this.props.user ?
+              <Link to='/pets'>
+                <img src={logo} width="80"
+                  name='My Pet'
+                  id='myPet'
+                  active={this.props.location.pathname === '/pets'}
+                />
+              </Link>
+            :
+              <Link to='/'>
+                <img src={logo} width="80"
+                  name='home'
+                  id='home'
+                  active={this.props.location.pathname === '/'}
+                />
+              </Link>
+          }
           <Link to='/developers'>
             <NavagationLink
               id='developers'

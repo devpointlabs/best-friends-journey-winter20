@@ -12,7 +12,6 @@ import Notes from './components/note/Notes';
 import Profile from './components/profile/Profile';
 import Developers from './components/shared/Developers';
 import Footer from './components/shared/Footer';
-import { PetBackground } from './components/stylecomponents/petsstyles';
 
 const App = () => (
   <>
@@ -23,9 +22,7 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <PetBackground>
-            <Route exact path="/pets" component={Pets} />  
-          </PetBackground>
+          <Route exact path="/pets" component={Pets} />  
           <Route exact path="/insurances" component={Insurances} />
           <Route exact path="/notes" component={Notes} />
           <Route exact path="/profile" component={Profile} />
